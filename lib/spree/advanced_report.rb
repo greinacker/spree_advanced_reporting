@@ -33,7 +33,6 @@ module Spree
         params[:search][:created_at_lt] = Time.zone.parse(params[:search][:created_at_lt]).end_of_day rescue ""
       end
 
-      params[:search][:completed_at_present] = "1"
       params[:search][:state_not_eq] = 'canceled'
 
       search = Order.search(params[:search])
